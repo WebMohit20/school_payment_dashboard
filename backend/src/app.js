@@ -6,7 +6,7 @@ import transactionRoute from "./routes/transactions.route.js"
 import webhookRoute from "./routes/webhook.route.js"
 import userRoute from "./routes/user.route.js"
 import { checkAuth } from "./middelwears/auth.middelwear.js"
-
+import path from "path"
 
 const app = express()
 
@@ -32,7 +32,7 @@ app.use("/api/v1",webhookRoute)
 app.use("/api/v1",checkAuth,paymentRoute)
 
 app.use("/api/v1",checkAuth,transactionRoute)
-
+const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
