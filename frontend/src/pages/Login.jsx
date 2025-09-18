@@ -12,11 +12,12 @@ const Login = () => {
         password: "",
     });
     const [loading, setLoading] = useState(false)
+    const { user } = useContext(ThemeContext)
     useEffect(() => {
+        user[1]("")
         localStorage.removeItem("user")
     }, [])
 
-    const { user } = useContext(ThemeContext)
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
