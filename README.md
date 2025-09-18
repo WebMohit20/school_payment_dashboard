@@ -1,5 +1,5 @@
 # School Payment & Dashboard
-
+Live demo: https://school-payment-dashboard-mx2h.onrender.com/
 Clone the repository:
 ```bash
 git clone https://github.com/WebMohit20/school_payment_dashboard.git
@@ -66,7 +66,7 @@ Specify repository license as needed.
 
 ![Screenshot of login page](screen-shots/login.png "Login Page")
 
-![Screenshot of dashboard page](screen-shots/dashboard.png "Dashboard Page")
+![Screenshot of dashboard page](screen-shots/dashboar.png "Dashboard Page")
 
 ![Screenshot of transactionBySchoolId page](./screen-shots/schoolId.png "TransactionBySchoolId Page")
 
