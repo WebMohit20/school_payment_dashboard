@@ -102,7 +102,7 @@ import { axiosInstance } from "../lib/axios";
                     </>
                 )}
             </div>
-            {open&&<CheckStatusModal open={open} />}
+            {open&&<CheckStatusModal open={open} setOpen={setOpen}  />}
         </div>
     );
 }

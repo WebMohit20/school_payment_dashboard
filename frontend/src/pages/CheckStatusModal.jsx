@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { axiosInstance } from "../lib/axios";
 import { Loader2 } from "lucide-react";
 
-function CheckStatusModal({ open }) {
+function CheckStatusModal({ open,setOpen }) {
   const [customOrderId, setCustomOrderId] = useState("");
   const [responseData, setResponseData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,6 +30,13 @@ function CheckStatusModal({ open }) {
       setLoading(false);
     }
   };
+
+  const handleClose = () => {
+    setCustomOrderId("")
+    setResponseData(null)
+    setOpenModal(false)
+    setOpen(false)
+  }
 
   return (
     <div className="">
@@ -81,7 +88,7 @@ function CheckStatusModal({ open }) {
             )}
 
             <div className="modal-action">
-              <button className="btn w-full sm:w-auto" onClick={() => setOpenModal(false)}>
+              <button className="btn w-full sm:w-auto" onClick={handleClose}>
                 Close
               </button>
             </div>

@@ -4,11 +4,12 @@ import TransactionsOverview from './pages/TransactionsOverview'
 import Navbar from './components/Navbar'
 import { ThemeContext } from './context/ThemeContext'
 import Signup from './pages/Signup'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import { Toaster } from 'react-hot-toast'
 import TransactionsBySchool from './pages/TransactionsBySchool'
 import CheckStatusModal from './pages/CheckStatusModal'
+import { LogIn } from 'lucide-react'
 
 
 
@@ -18,7 +19,7 @@ function App() {
   
   return (
     <div data-theme={theme[0]}>
-      <div className="min-h-screen  flex flex-col  items-center justify-center bg-base-200 relative ">
+      <div className="min-h-screen  flex flex-row items-center justify-center bg-base-200 relative ">
         <Navbar />
 
         <Routes>
@@ -26,9 +27,9 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Login />} />
           
-          {user[0] && <Route path='/transactions' element={<TransactionsOverview />} />}
-          {user[0] && <Route path='/transactions/school/:schoolId' element={<TransactionsBySchool />} />}
-          {user[0] && <Route path='/check-status' element={<CheckStatusModal />} />}
+          { <Route path='/transactions' element={user[0] ? <TransactionsOverview />:<Navigate to="/login" /> } />}
+          { <Route path='/transactions/school/:schoolId' element={ user[0] ?<TransactionsBySchool />:<Navigate to="/login" />} />}
+          { <Route path='/check-status' element={user[0] ? <CheckStatusModal />:<Navigate to="/login" />}  />}
         </Routes>
         <Toaster />
         {/* <button className="btn btn-primary mt-4">Primary Button</button> */}

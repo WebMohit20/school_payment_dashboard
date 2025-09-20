@@ -2,9 +2,9 @@ import React from 'react'
 
 const Table = ( {transactions,loading,error = null ,page} ) => {
     return (
-        <div id="transactions-table" className="overflow-none">
-            <table className="table w-full table-pin-cols  bg-base-300">
-                <thead className="sticky top-0 bg-base-100">
+        <div id="transactions-table" className="  h-[calc(100vh-210px)] overflow-y-auto overflow-x-hidden       rounded-xl shadow-sm ">
+            <table className="table w-full min-w-[800px] table-pin-cols  bg-base-300 ">
+                <thead className="sticky top-0 z-10 bg-base-100">
                     <tr>
                         <th className="w-12">Sr.No.</th>
                         <th>Collect_id</th>
@@ -46,10 +46,10 @@ const Table = ( {transactions,loading,error = null ,page} ) => {
                                 className="bg-base-300 transition-all duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:z-10 relative cursor-pointer"
                             >
                                 <td>{(page.page - 1) * page.limit + idx + 1 }</td>
-                                <td>{row.collect_id}</td>
+                                <td >{row.collect_id}</td>
                                 <td>{row.order_info.school_id}</td>
                                 <td>{row.order_info.gateway_name}</td>
-                                <td>₹{Number(row.order_amount ?? 0).toLocaleString()}</td>
+                                <td >₹{Number(row.order_amount ?? 0).toLocaleString()}</td>
                                 <td>₹{Number(row.transaction_amount ?? 0).toLocaleString()}</td>
                                 <td>
                                     <span

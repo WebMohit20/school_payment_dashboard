@@ -76,11 +76,11 @@ function TransactionsOverview() {
     
 
     return (
-        <div className="p-4 w-full h-screen bg-base-200 absolute top-14">
-            <div className='flex pr-2 pl-2 h-full flex-col md:items-center md:justify-between gap-3 mb-4 '>
+        <div className="p-4 w-full  bg-base-200  absolute top-14">
+            <div className='flex pr-2 pl-2 flex-col md:items-center md:justify-between gap-3 mb-4 '>
 
 
-                <div className='flex items-center flex-col gap-4'>
+                <div className='flex items-center flex-col gap-4 '>
 
                     
                     <Filters props={{setSearch,setStatus,status,setOrder,order,setSort,sort,search,setPage}} />

@@ -5,7 +5,7 @@ export const checkAuth = async (req, res, next) => {
     try {
         // console.log(req.hasOwnProperty("cookies"))
         const token  = req.cookies.jwt
-        console.log(token)
+        
         if (!token) {
             return res.status(401).json({ success: false, message: "Unauthorized - No Token Provided" })
         }
